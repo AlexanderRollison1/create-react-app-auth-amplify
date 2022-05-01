@@ -4,10 +4,10 @@ import './App.css';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
-import Home from './components/Home'
-import Encryption from './components/Encryption'
-import Steganography from './components/Steganography'
-import About from './components/About'
+import Home from './Components/Home'
+import Encryption from './Components/Encryption'
+import Steganography from './Components/Steganography'
+import About from './Components/About'
 import NavBar from './Components/NavBar'
 Amplify.configure(aws_exports);
 
