@@ -4,6 +4,11 @@ import './App.css';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
+import Home from './components/Home'
+import Encryption from './components/Encryption'
+import Steganography from './components/Steganography'
+import About from './components/About'
+import NavBar from './Components/NavBar'
 Amplify.configure(aws_exports);
 
 class App extends Component {
@@ -11,7 +16,15 @@ class App extends Component {
     return (
       <div className="App">
         <AmplifySignOut />
-        <h1>Home</h1>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/encryption' exact component={Encryption} />
+            <Route path='/steganography' exact component={Steganography} />
+            <Route path='/about' exact component={About} />
+          </Switch>
+        </Router>
       </div>
     );
   }
